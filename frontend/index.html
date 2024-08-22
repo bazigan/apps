@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Pastikan event listener dipasang setelah konten di-load
+            const button = document.getElementById('fetchBtn');
+            
+            // Tambahkan event listener untuk klik tombol
+            button.addEventListener('click', function() {
+                console.log('Tombol diklik!');
+                // Simulasi request ke backend
+                fetch('http://localhost:4000/api')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        document.getElementById('message').innerText = data.message;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Frontend</h1>
     <button id="fetchBtn">Fetch Message from Backend</button>
     <p id="message"></p>
 
-    <script src="app.js"></script>
 </body>
 </html>
