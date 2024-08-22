@@ -13,7 +13,7 @@
             button.addEventListener('click', function() {
                 console.log('Tombol diklik!');
                 // Simulasi request ke backend
-                fetch('http://localhost:4000/api')
+                fetch('http://172.23.11.12:4000/api')
                     .then(response => response.json())
                     .then(data => {
                         console.log(data);
