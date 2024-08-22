@@ -6,7 +6,7 @@ FROM nginx:alpine
 # Salin file statis
 COPY index.html /usr/share/nginx/html/index.html
 COPY app.js /usr/share/nginx/html/app.js
-COPy .env /usr/share/nginx/html/
+COPY .env /usr/share/nginx/html/
 RUN apk add --no-cache gettext
 
 # Salin script environment loader
